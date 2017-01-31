@@ -22,7 +22,7 @@ services:
       - ./mysql:/etc/mysql/conf.d
       - mysql_volume:/var/lib/mysql
     ports:
-      - 3307:3306
+      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=forge
       - MYSQL_USER=forge
