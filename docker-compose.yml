@@ -27,3 +27,4 @@ services:
       - MYSQL_ROOT_PASSWORD=forge
       - MYSQL_USER=forge
       - MYSQL_PASSWORD=forge
+      - MYSQL_DATABASE=forge
