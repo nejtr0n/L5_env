@@ -6,6 +6,18 @@ services:
     volumes:
     - ./www:/var/www/html
 
+  php-jobs:
+    build: ./infra/php
+    command: php artisan queue:work --queue=high,default,low,emails --timeout=60 --tries=10
+    volumes:
+    - ./www:/var/www/html
+
+  php-schedule:
+    build: ./infra/php
+    command: /root/schedule.sh
+    volumes:
+    - ./www:/var/www/html
+
   front:
     build: ./infra/nginx
     ports:

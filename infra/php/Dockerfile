@@ -29,5 +29,8 @@ RUN docker-php-ext-install iconv
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install mbstring tokenizer gd exif opcache bcmath sockets pdo_mysql pdo_pgsql pdo_sqlite
 
+COPY schedule.sh /root/schedule.sh
+RUN chmod +x /root/schedule.sh
+
 RUN usermod  -u 1000 www-data
 RUN groupmod -g 1000 www-data
