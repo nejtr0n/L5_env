@@ -9,5 +9,6 @@ RUN echo "Europe/Moscow" > /etc/timezone && \
         dpkg-reconfigure --frontend=noninteractive locales && \
         update-locale LANG=ru_RU.UTF-8
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --fix-missing postgresql-contrib postgis postgresql-10-postgis-2.4
+#RUN echo "listen_addresses='0.0.0.0'" >> /usr/share/postgresql/11/postgresql.conf.sample
 
 
